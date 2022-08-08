@@ -43,6 +43,7 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    overflow: hidden;
   }
 
   /* Default is facing away */
