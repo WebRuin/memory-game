@@ -4,6 +4,7 @@
   import { cardBackground } from "../lib/stores";
 
   let browserHeight;
+  let lsNumberOfTries;
 
   onMount(() => {
     browserHeight = (window.innerHeight * 0.8) / 4;
@@ -52,6 +53,19 @@
     }
 
     flip = !flip;
+
+    if ($numberOfPairs === 8) {
+      alert("You won!");
+      if (lsNumberOfTries === null) {
+        localStorage.setItem("numberOfTries", `${$numberOfTries}`);
+      } else {
+        if ($numberOfTries < lsNumberOfTries) {
+          localStorage.setItem("numberOfTries", `${$numberOfTries}`);
+        }
+      }
+
+      localStorage.setItem("numberOfTries", `${$numberOfTries}`);
+    }
   }
 </script>
 
@@ -78,7 +92,6 @@
     height: var(--card-size);
     display: grid;
     place-items: center;
-    border-radius: 20px;
     border: 6px solid transparent;
   }
 

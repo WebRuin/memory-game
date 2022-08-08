@@ -18,10 +18,12 @@
 <style>
   .flip-card {
     background-color: transparent;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  /* This container is needed to position the front and back side */
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -35,12 +37,10 @@
     transform: rotateY(-180deg);
   }
 
-  /* Position the front and back side */
   .flip-card-front,
   .flip-card-back {
     position: absolute;
     width: 100%;
-    height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
     overflow: hidden;

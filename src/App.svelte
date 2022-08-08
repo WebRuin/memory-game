@@ -1,5 +1,10 @@
 <script>
-  import { cardBackground, numberOfTries, numberOfPairs } from "./lib/stores";
+  import {
+    bestNumberOfTries,
+    cardBackground,
+    numberOfTries,
+    numberOfPairs,
+  } from "./lib/stores";
   import { shuffle } from "./lib/utils";
   import Card from "./lib/Card.svelte";
 
@@ -50,6 +55,10 @@
     "🔥",
   ];
 
+  const bestScore = $bestNumberOfTries
+    ? `| Your best score was: ${$bestNumberOfTries}`
+    : "";
+
   cardBackground.set(redBrick);
 
   function setCardBg(img) {
@@ -84,8 +93,7 @@
     </div>
     <div class="game-wrapper">
       <div class="stats">
-        <p>{$numberOfTries} attempts</p>
-        <h2>Game</h2>
+        <p>{$numberOfTries} attempts {bestScore}</p>
         <p>{$numberOfPairs} pairs of 8</p>
       </div>
       <div class="grid">
@@ -116,7 +124,7 @@
   }
 
   .stats {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .wrapper {
