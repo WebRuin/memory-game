@@ -67,8 +67,8 @@
   img,
   .back {
     display: block;
-    width: 200px;
-    height: 200px;
+    width: var(--card-size);
+    height: var(--card-size);
     display: grid;
     place-items: center;
     border-radius: 20px;

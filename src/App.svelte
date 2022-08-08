@@ -105,10 +105,10 @@
     gap: 4rem;
   }
   .grid {
-    width: 800px;
+    width: var(--grid-width);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-size), 1fr));
     justify-items: center;
     align-items: center;
   }
