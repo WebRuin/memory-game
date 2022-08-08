@@ -8,21 +8,28 @@
   import network from "./assets/network.svg";
   import subtlePrism from "./assets/subtle-prism.png";
   import waveyFingerprint from "./assets/wavey-fingerprint.png";
+  import bermudaCircle from "./assets/bermuda-circle.png";
+  import confettiDoodles from "./assets/confetti-doodles.png";
+  import dalmatianSpots from "./assets/dalmatian-spots.png";
+  import parabolicTriangle from "./assets/parabolic-triangle.png";
+  import rosePetals from "./assets/rose-petals.png";
+  import scatteredForcefields from "./assets/scattered-forcefields.png";
+  import abstractTimekeeper from "./assets/abstract-timekeeper.png";
 
   const backgrounds = [
     { name: "Red Brick", img: redBrick },
     { name: "Rainbow", img: rainbow },
     { name: "Network", img: network },
     { name: "Subtle Prism", img: subtlePrism },
+    { name: "Bermuda Circle", img: bermudaCircle },
     { name: "Wavey Fingerprint", img: waveyFingerprint },
+    { name: "Confetti Doodles", img: confettiDoodles },
+    { name: "Dalmatian Spots", img: dalmatianSpots },
+    { name: "Parabolic Triangle", img: parabolicTriangle },
+    { name: "Rose Petals", img: rosePetals },
+    { name: "Scattered Forcefields", img: scatteredForcefields },
+    { name: "abstractTimekeeper", img: abstractTimekeeper },
   ];
-
-  cardBackground.set(redBrick);
-
-  function setCardBg(img) {
-    console.log(img);
-    cardBackground.set(img);
-  }
 
   const icons = [
     "🍺",
@@ -42,6 +49,13 @@
     "🔥",
     "🔥",
   ];
+
+  cardBackground.set(redBrick);
+
+  function setCardBg(img) {
+    console.log(img);
+    cardBackground.set(img);
+  }
 
   const shuffledIcons = shuffle(icons);
 </script>
@@ -71,6 +85,7 @@
     <div class="game-wrapper">
       <div class="stats">
         <p>{$numberOfTries} attempts</p>
+        <h2>Game</h2>
         <p>{$numberOfPairs} pairs of 8</p>
       </div>
       <div class="grid">
@@ -95,13 +110,18 @@
   }
   .stats,
   .backgrounds {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     gap: 4rem;
   }
   .grid {

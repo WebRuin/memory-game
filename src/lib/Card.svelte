@@ -1,6 +1,13 @@
 <script>
+  import { onMount } from "svelte";
   import Flip from "../lib/Flip.svelte";
   import { cardBackground } from "../lib/stores";
+
+  let browserHeight;
+
+  onMount(() => {
+    browserHeight = (window.innerHeight * 0.8) / 4;
+  });
 
   import {
     firstCard,
@@ -49,7 +56,7 @@
 </script>
 
 <div on:click={handleClick} class="card">
-  <Flip height="200px" width="200px" {flip}>
+  <Flip height={`${browserHeight}px`} width={`${browserHeight}px`} {flip}>
     <img slot="front" src={$cardBackground} alt="card back" />
     <div class="back" slot="back">{icon}</div>
   </Flip>
@@ -59,7 +66,7 @@
   .back {
     margin: 0;
     padding: 0;
-    font-size: 4rem;
+    font-size: var(--card-icon-size);
     background: #efe;
     text-shadow: 1px 1px 2px black;
   }
