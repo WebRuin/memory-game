@@ -7,5 +7,7 @@ This is a fun memory game writen in Svelte
 ## Setup
 
 ```bash
-s
+gh repo clone WebRuin/memory-game
+cd memory-game
+pnpm i
 ```
