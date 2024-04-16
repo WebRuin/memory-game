@@ -1,4 +1,11 @@
 # Svelte Memory Game
-![Svelte Memory Game](https://cute-haupia-c97ca6.netlify.app/)
 
-## This is a fun memory game writen in Svelte
+![Svelte Memory game](https://res.cloudinary.com/tithos/image/upload/f_auto,q_auto/v1713296019/Untitled_osia4i.jpg)
+
+This is a fun memory game writen in Svelte
+
+## Setup
+
+```bash
+s
+```
